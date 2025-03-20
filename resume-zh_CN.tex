@@ -24,50 +24,73 @@
  
 \section{\  教育背景}
 % \section{\faGraduationCap\  教育背景}
-\datedsubsection{\textbf{上海交通大学}, 上海}{2013 -- 至今}
-\textit{在读硕士研究生}\ 信息与通信工程, 预计 2016 年 3 月毕业
-\datedsubsection{\textbf{西安电子科技大学}, 西安, 陕西}{2009 -- 2013}
-\textit{学士}\ 通信工程
+\datedsubsection{\textbf{南京大学}, 南京, 江苏}{2022 -- 至今}
+\textit{直博在读}\ 声学, 预计 2027 年 6 月毕业
+\datedsubsection{\textbf{南京大学}, 南京, 江苏}{2018 -- 2022}
+\textit{本科}\ 声学
 
-\section{\ 实习/项目经历}
+\section{\ 项目经历}
 % \section{\faUsers\ 实习/项目经历}
-\datedsubsection{\textbf{黑科技公司} 上海}{2015年3月 -- 2015年5月}
-\role{实习}{经理: 高富帅}
-xxx后端开发
+\datedsubsection{\textbf{居室降噪项目}}{2022年10月 -- 2024年12月}
+\role{华为合作项目}{主要负责人}
+% \begin{onehalfspacing}
+室内复杂声场环境下，非接触式局部有源降噪系统设计
 \begin{itemize}
-  \item 实现了 xxx 特性
-  \item 后台资源占用率减少8\%
-  \item xxx
+  \item \textbf{虚拟传感算法：}调研多种常用虚拟传感算法，包括 VM, RM, AF 算法，使用 MATLAB 进行算法实现与仿真，对比分析稳态性能、收敛速度等关键指标
+  \item \textbf{实时自适应 ANC 开发：}针对 TI TMS320C6678 开发板，进行 C 语言嵌入式 DSP 开发，实现结合 RM 虚拟传感的多通道实时自适应有源噪声控制
+  \item \textbf{改善不同噪声收敛性能：}通过实现时域预白化 FxLMS 算法，以及改进频域归一化 FBFxLMS 算法两种技术路径，解决系统对于有色噪声收敛性能差的问题，改善不同噪声及多噪声源场景下的系统适应性
+  \item \textbf{结合人头追踪扩大静区范围：}使用 Intel Realsense 结构光相机，通过 RTMpose 神经网络结合后处理算法，对人头在三维空间的平动坐标和转动角度进行实时定位。ANC 控制器根据定位坐标，实时更新预存滤波器数据，实现静区跟随人头移动
+  \item \textbf{空间插值进一步优化降噪性能：}结合人头周围多个建模点信息，利用重心插值算法，拟合当前位置滤波器系数，相比传统的就近切换策略显著提升非建模点位置的降噪量，减小人头移动时降噪量波动，同时避免滤波器切换时的声压跳变，改善体验
+  \item \textbf{抗非目标干扰：}系统存在非目标干扰时，通过监测参考信号和误差信号异常，保护系统稳定性
+\end{itemize}
+% \end{onehalfspacing}
+
+\datedsubsection{\textbf{主动超材料项目}}{2024年5月 -- 2024年12月}
+\role{合作课题}{参与项目}
+通过主动控制手段，调控材料表面反射波，实现可变的反射系数曲线
+\begin{itemize}
+  \item 反馈中和算法的 DSP 实现
+  \item 子带算法 DSP 实现，从而调控不同子带的反射系数
 \end{itemize}
 
-\datedsubsection{\textbf{分布式科学上网姿势}}{2014年6月 -- 至今}
-\role{Golang, Linux}{个人项目，和富帅糕合作开发}
-\begin{onehalfspacing}
-分布式负载均衡科学上网姿势, https://github.com/cyfdecyf/cow
+\datedsubsection{\textbf{虚拟声屏障项目}}{2024年5月}
+\role{中驰集团合作项目}{参与项目}
+在房间窗户布设的虚拟声屏障，阻断噪声的同时保持通风
 \begin{itemize}
-  \item 修复了连接未正常关闭导致文件描述符耗尽的 bug
-  \item 使用Chord 哈希 URL, 实现稳定可靠地分流
-  \item xxx (尽量使用量化的客观结果)
+  \item 物理系统的调试测试
+  \item GUI 图形操作界面调试
 \end{itemize}
-\end{onehalfspacing}
 
-\datedsubsection{\textbf{\LaTeX\ 简历模板}}{2015 年5月 -- 至今}
-\role{\LaTeX, Python}{个人项目}
-\begin{onehalfspacing}
-优雅的 \LaTeX\ 简历模板, https://github.com/billryan/resume
+\datedsubsection{\textbf{Hybrid ANC 算法设计}}{2022年6月 -- 2022年10月}
+\role{个人项目}{探索研究}
+将自适应滤波、卡尔曼滤波等传统算法与神经网络相结合的有源噪声控制算法设计
 \begin{itemize}
-  \item 容易定制和扩展
-  \item 完善的 Unicode 字体支持，使用 \XeLaTeX\ 编译
-  \item 支持 FontAwesome 4.5.0
+  \item 调研现有几种 hybrid ANC 策略，包括完全用神经网络全替代自适应滤波、用神经网络辅助选取自适应算法更新步长、用神经网络辅助选取自适应算法更新初值
+  \item 复现测试 DNN-FDAF, KalmanNet 等算法
 \end{itemize}
-\end{onehalfspacing}
+
+\datedsubsection{\textbf{车载有源噪声控制项目}}{2022年1月 -- 2022年6月}
+\role{个人项目}{探索研究}
+基于实测汽车路噪数据，仿真对比不同 FxLMS 改进算法的性能
+\begin{itemize}
+  \item 涉及算法包括泄露算法、BCD 算法、NLMS算法、TLMS算法、球面流形优化算法
+\end{itemize}
+
+\datedsubsection{\textbf{耳机有源噪声控制项目}}{2021年7月 -- 2021年12月}
+\role{个人项目}{探索研究}
+基于实测的耳机传递函数，设计有源降噪反馈滤波器
+\begin{itemize}
+  \item 实验测量不同佩戴情况下耳机次级路径传递函数
+  \item 基于内模结构，使用 $H_2/H_\infty$ 方法设计反馈控制滤波器
+  \item 使用顺序二次规划、遗传算法等优化算法拟合对应 IIR 滤波器
+\end{itemize}
 
 % Reference Test
-%\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
-%An xxx optimized for xxx\cite{verma2015large}
-%\begin{itemize}
+% \datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
+% An xxx optimized for xxx\cite{verma2015large}
+% \begin{itemize}
 %  \item main contribution
-%\end{itemize}
+% \end{itemize}
 
 \section{\ IT 技能}
 % \section{\faCogs\ IT 技能}
@@ -92,8 +115,18 @@ xxx后端开发
   \item 语言: 英语 - 熟练(TOEFL xxx)
 \end{itemize}
 
-%% Reference
-%\newpage
-%\bibliographystyle{IEEETran}
-%\bibliography{mycite}
+% Reference
+% \newpage
+\renewcommand{\refname}{个人成果}
+% % \cite {"Citation Key"}
+\nocite{*}    %显示所有文献
+% \bibliographystyle{IEEETran}
+% \bibliography{mycite}
+
+\begin{thebibliography}{9}
+\bibitem{liu_active_2025} Y. Liu, \textbf{H. Li}, H. Zou, Z. Lin, and J. Lu, “Active headrest combined with a depth camera-based ear-positioning system,” The Journal of the Acoustical Society of America, vol. 157, no. 1, pp. 519–526, Jan. 2025, doi: 10.1121/10.0034860.
+\bibitem{hu_online_2025} M. Hu, \textbf{H. Li}, J. Lu, H. Zou, and Q. Ma, “An online modeling virtual sensing technique based on kriging interpolation for active noise control,” Mechanical Systems and Signal Processing, vol. 224, p. 112186, Feb. 2025, doi: 10.1016/j.ymssp.2024.112186.
+\bibitem{3} 2024 全国声学大会口头汇报“人头移动鲁棒的有源降噪头靠系统设计”
+\end{thebibliography}
+
 \end{document}
