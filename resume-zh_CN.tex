@@ -9,51 +9,87 @@
 % \usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
 \usepackage{linespacing_fix} % disable extra space before next section
 \usepackage{cite}
+\usepackage{tabu}
+\usepackage{multirow}
 
 \begin{document}
 \pagenumbering{gobble} % suppress displaying page number
 
+% \Large{
+%   \begin{tabu}{ c c r }
+%     % \multirow{3}{0.33\linewidth}{\makebox[0.33\textwidth][s]} & \scshape{李浩文} & \multirow{3}{0.33\linewidth}{\includegraphics[width=0.88in]{avatar}} \\
+%     \multirow{3}{0.333\linewidth}{\makebox[0.33\textwidth][s]} & \scshape{李浩文} & \multirow{3}{0.333\linewidth}{\includegraphics[width=0.88in]{lhw_photo.jpg}} \\
+%     & \email{haowenli@smail.nju.edu.cn} \\
+%     & \phone{(+86) 182-6062-0175} \\
+%   \end{tabu}
+% }
+
+% \begin{figure}[!t]
+%     \flushright  %右对齐
+%     \includegraphics[width=0.88in]{avatar}
+% \end{figure}
+ 
 \name{李浩文}
 
 \basicInfo{
-  \email{haowenli@smail.nju.edu.cn} \textperiodcentered\ 
-  \phone{(+86) 182-6062-0175} 
+  % \email{haowenli@smail.nju.edu.cn} \textperiodcentered\
+  \email{haowenli@smail.nju.edu.cn}
+  % \phone{(+86) 182-6062-0175} 
   % \textperiodcentered\ 
   % \linkedin[billryan8]{https://www.linkedin.com/in/billryan8}
   }
- 
+\basicInfo{
+  \phone{(+86) 182-6062-0175} 
+  }
+
 \section{\  教育背景}
 % \section{\faGraduationCap\  教育背景}
-\datedsubsection{\textbf{南京大学}, 南京, 江苏}{2022 -- 至今}
-\textit{直博在读}\ 声学, 预计 2027 年 6 月毕业
-\datedsubsection{\textbf{南京大学}, 南京, 江苏}{2018 -- 2022}
-\textit{本科}\ 声学
+\datedsubsection{\textbf{南京大学}}{2022.09 -- 至今}
+\begin{onehalfspacing}
+\textit{推免直博}\ 物理学院，声学, 预计 2027 年 6 月毕业 \hfill 南京
+\begin{itemize}
+    \item 荣誉奖项：校优秀研究生（2023, 2024）、校优秀共青团员、校研究生公益服务优秀奖、博士研究生校长特别奖学金
+    \item 学生工作：声学研究生第二党支部宣传委员（2024.10-至今）
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{南京大学}}{2018.09 -- 2022.06}
+\begin{onehalfspacing}
+\textit{本科}\ 物理学院，声学 \hfill 南京
+\begin{itemize}
+    \item 成绩排名：4.43/5.00（专业前15\%）
+    \item 主修课程：音频声学、数字信号处理、信号与系统、声学基础、概率论与随机过程、最优化理论与方法
+    \item 荣誉奖项：校优秀毕业生、校优秀学生干部、校优秀学生、校优秀共青团干部（2019, 2021）、校优秀共青团员、校优秀学生会骨干、校优秀学生社团骨干
+    \item 学生工作：校社团管理部办公室副主任（2019学年）、物理学院学生会副主席（2020学年）、物理学院拔尖班团支部书记（2018学年）
+\end{itemize}
+\end{onehalfspacing}
 
 \section{\ 项目经历}
 % \section{\faUsers\ 实习/项目经历}
-\datedsubsection{\textbf{居室降噪项目}}{2022年10月 -- 2024年12月}
+\begin{onehalfspacing}
+\datedsubsection{\textbf{居室降噪项目}}{2022.10 -- 2024.12}
 \role{华为合作项目}{主要负责人}
 % \begin{onehalfspacing}
 室内复杂声场环境下，非接触式局部有源降噪系统设计
 \begin{itemize}
   \item \textbf{虚拟传感算法：}调研多种常用虚拟传感算法，包括 VM, RM, AF 算法，使用 MATLAB 进行算法实现与仿真，对比分析稳态性能、收敛速度等关键指标
-  \item \textbf{实时自适应 ANC 开发：}针对 TI TMS320C6678 开发板，进行 C 语言嵌入式 DSP 开发，实现结合 RM 虚拟传感的多通道实时自适应有源噪声控制
-  \item \textbf{改善不同噪声收敛性能：}通过实现时域预白化 FxLMS 算法，以及改进频域归一化 FBFxLMS 算法两种技术路径，解决系统对于有色噪声收敛性能差的问题，改善不同噪声及多噪声源场景下的系统适应性
-  \item \textbf{结合人头追踪扩大静区范围：}使用 Intel Realsense 结构光相机，通过 RTMpose 神经网络结合后处理算法，对人头在三维空间的平动坐标和转动角度进行实时定位。ANC 控制器根据定位坐标，实时更新预存滤波器数据，实现静区跟随人头移动
-  \item \textbf{空间插值进一步优化降噪性能：}结合人头周围多个建模点信息，利用重心插值算法，拟合当前位置滤波器系数，相比传统的就近切换策略显著提升非建模点位置的降噪量，减小人头移动时降噪量波动，同时避免滤波器切换时的声压跳变，改善体验
+  \item \textbf{实时自适应 ANC 开发：}针对 TI TMS320C6678 开发板，使用 C 语言进行嵌入式 DSP 开发，实现结合 RM 虚拟传感的多通道实时自适应有源噪声控制
+  \item \textbf{改善不同噪声收敛性能：}通过实现时域预白化 FxLMS 算法，以及改进频域归一化 FBFxLMS 算法两种技术路径，解决系统对于有色噪声收敛性能差的问题，改善不同噪声场景下的系统适应性
+  \item \textbf{结合人头追踪扩大静区范围：}使用 Intel Realsense 结构光相机，通过 RTMpose 神经网络结合后处理算法，对人头在三维空间的平动坐标和转动角度进行实时定位。
+  \item \textbf{空间插值优化降噪性能：}结合人头周围多个建模点信息，利用重心插值，拟合当前位置滤波器系数，显著提升非建模点降噪量，减小人头移动时降噪量波动，消除滤波器切换时双耳声压跳变。
   \item \textbf{抗非目标干扰：}系统存在非目标干扰时，通过监测参考信号和误差信号异常，保护系统稳定性
 \end{itemize}
 % \end{onehalfspacing}
 
-\datedsubsection{\textbf{主动超材料项目}}{2024年5月 -- 2024年12月}
+\datedsubsection{\textbf{主动超材料项目}}{2024.05 -- 2024.12}
 \role{合作课题}{参与项目}
 通过主动控制手段，调控材料表面反射波，实现可变的反射系数曲线
 \begin{itemize}
   \item 反馈中和算法的 DSP 实现
-  \item 子带算法 DSP 实现，从而调控不同子带的反射系数
+  \item 子带FxLMS算法的 DSP 实现，以调控不同子带的反射系数
 \end{itemize}
 
-\datedsubsection{\textbf{虚拟声屏障项目}}{2024年5月}
+\datedsubsection{\textbf{虚拟声屏障项目}}{2024.5}
 \role{中驰集团合作项目}{参与项目}
 在房间窗户布设的虚拟声屏障，阻断噪声的同时保持通风
 \begin{itemize}
@@ -61,7 +97,7 @@
   \item GUI 图形操作界面调试
 \end{itemize}
 
-\datedsubsection{\textbf{Hybrid ANC 算法设计}}{2022年6月 -- 2022年10月}
+\datedsubsection{\textbf{Hybrid ANC 算法设计}}{2022.06 -- 2022.10}
 \role{个人项目}{探索研究}
 将自适应滤波、卡尔曼滤波等传统算法与神经网络相结合的有源噪声控制算法设计
 \begin{itemize}
@@ -69,14 +105,14 @@
   \item 复现测试 DNN-FDAF, KalmanNet 等算法
 \end{itemize}
 
-\datedsubsection{\textbf{车载有源噪声控制项目}}{2022年1月 -- 2022年6月}
+\datedsubsection{\textbf{车载有源噪声控制项目}}{2022.01 -- 2022.06}
 \role{个人项目}{探索研究}
 基于实测汽车路噪数据，仿真对比不同 FxLMS 改进算法的性能
 \begin{itemize}
   \item 涉及算法包括泄露算法、BCD 算法、NLMS算法、TLMS算法、球面流形优化算法
 \end{itemize}
 
-\datedsubsection{\textbf{耳机有源噪声控制项目}}{2021年7月 -- 2021年12月}
+\datedsubsection{\textbf{耳机有源噪声控制项目}}{2021.07 -- 2021.12}
 \role{个人项目}{探索研究}
 基于实测的耳机传递函数，设计有源降噪反馈滤波器
 \begin{itemize}
@@ -84,6 +120,24 @@
   \item 基于内模结构，使用 $H_2/H_\infty$ 方法设计反馈控制滤波器
   \item 使用顺序二次规划、遗传算法等优化算法拟合对应 IIR 滤波器
 \end{itemize}
+\end{onehalfspacing}
+
+% \section{\ 学生工作}
+% % \section{\faHeartO\ 获奖情况}
+% \datedline{\textit{第一名}, xxx 比赛}{2013 年6 月}
+% \datedline{其他奖项}{2015}
+
+\section{\ 技能及其他}
+% \section{\faCogs\ IT 技能}
+% increase linespacing [parsep=0.5ex]
+\begin{onehalfspacing}
+\begin{itemize}[parsep=0.5ex]
+  \item 编程语言: C、Matlab、Python
+  \item 平台/工具: CCS、Linux、SSH、VS Code、Visual Studio、LaTeX、GitHub、Audition
+  \item 实验技能：熟悉TMS320C6678、C6748等DSP平台的开发；熟练使用B\&K Pulse、人工头、NI采集卡等专业音频采集设备；熟练使用各种放大器、传声器、扬声器等音频设备
+  \item 语言: CET-4(608)、CET-6(564)
+\end{itemize}
+\end{onehalfspacing}
 
 % Reference Test
 % \datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
@@ -91,29 +145,6 @@
 % \begin{itemize}
 %  \item main contribution
 % \end{itemize}
-
-\section{\ IT 技能}
-% \section{\faCogs\ IT 技能}
-% increase linespacing [parsep=0.5ex]
-\begin{itemize}[parsep=0.5ex]
-  \item 编程语言: C == Python > C++ > Java
-  \item 平台: Linux
-  \item 开发: xxx
-\end{itemize}
-
-\section{\ 获奖情况}
-% \section{\faHeartO\ 获奖情况}
-\datedline{\textit{第一名}, xxx 比赛}{2013 年6 月}
-\datedline{其他奖项}{2015}
-
-\section{\ 其他}
-% \section{\faInfo\ 其他}
-% increase linespacing [parsep=0.5ex]
-\begin{itemize}[parsep=0.5ex]
-  \item 技术博客: http://blog.yours.me
-  \item GitHub: https://github.com/username
-  \item 语言: 英语 - 熟练(TOEFL xxx)
-\end{itemize}
 
 % Reference
 % \newpage
@@ -124,8 +155,8 @@
 % \bibliography{mycite}
 
 \begin{thebibliography}{9}
-\bibitem{liu_active_2025} Y. Liu, \textbf{H. Li}, H. Zou, Z. Lin, and J. Lu, “Active headrest combined with a depth camera-based ear-positioning system,” The Journal of the Acoustical Society of America, vol. 157, no. 1, pp. 519–526, Jan. 2025, doi: 10.1121/10.0034860.
-\bibitem{hu_online_2025} M. Hu, \textbf{H. Li}, J. Lu, H. Zou, and Q. Ma, “An online modeling virtual sensing technique based on kriging interpolation for active noise control,” Mechanical Systems and Signal Processing, vol. 224, p. 112186, Feb. 2025, doi: 10.1016/j.ymssp.2024.112186.
+\bibitem{liu_active_2025} Y. Liu, \textbf{H. Li}, H. Zou, Z. Lin, and J. Lu, “Active headrest combined with a depth camera-based ear-positioning system,” The Journal of the Acoustical Society of America, vol. 157, no. 1, pp. 519–526, Jan. 2025, doi: 10.1121/10.0034860. (JCR Q2)
+\bibitem{hu_online_2025} M. Hu, \textbf{H. Li}, J. Lu, H. Zou, and Q. Ma, “An online modeling virtual sensing technique based on kriging interpolation for active noise control,” Mechanical Systems and Signal Processing, vol. 224, p. 112186, Feb. 2025, doi: 10.1016/j.ymssp.2024.112186. (JCR Q1)
 \bibitem{3} 2024 全国声学大会口头汇报“人头移动鲁棒的有源降噪头靠系统设计”
 \end{thebibliography}
 
